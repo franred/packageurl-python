@@ -183,6 +183,7 @@
   "https://crates.io/api/v1/crates/rand/0.7.2/download": "pkg:cargo/rand@0.7.2",
   "https://crates.io/api/v1/crates/clap/2.33.0/download": "pkg:cargo/clap@2.33.0",
   "https://crates.io/api/v1/crates/structopt/0.3.11/download": "pkg:cargo/structopt@0.3.11",
+  "https://static.crates.io/crates/anstyle-wincon/anstyle-wincon-3.0.10.crate": "pkg:cargo/anstyle-wincon@3.0.10",
   "https://github.com/TG1999/fetchcode/tree/documentation/fetchcode": "pkg:github/tg1999/fetchcode@documentation#fetchcode",
   "https://github.com/nexB/scancode-toolkit/tree/develop/plugins/scancode-ctags-macosx_10_9_intel": "pkg:github/nexb/scancode-toolkit@develop#plugins/scancode-ctags-macosx_10_9_intel",
   "https://github.com/package-url/packageurl-js/tree/master/test/data": "pkg:github/package-url/packageurl-js@master#test/data",

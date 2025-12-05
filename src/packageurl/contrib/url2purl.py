@@ -441,6 +441,17 @@ def build_sourceforge_purl(uri):
     return sourceforge_purl
 
 
+# https://static.crates.io/crates/anstyle-wincon/anstyle-wincon-3.0.10.crate
+cargo_static_pattern = (
+    r"^https?://static.crates.io/crates/"
+    r"(?P<name>.+)/"
+    r"(?P=name)-*(?P<version>[0-9\.]+)"  # {name} repeated in the filename with the version to follow.
+    r"(\.crate)$"  # ending with ".crates"
+)
+
+register_pattern("cargo", cargo_static_pattern)
+
+
 # https://crates.io/api/v1/crates/rand/0.7.2/download
 cargo_pattern = r"^https?://crates.io/api/v1/crates/(?P<name>.+)/(?P<version>.+)(\/download)$"
 

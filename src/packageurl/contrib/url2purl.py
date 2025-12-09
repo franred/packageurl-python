@@ -678,7 +678,7 @@ def build_bitbucket_purl(url):
     )
 
 
-@purl_router.route("https?://gitlab\\.com/(?!.*/archive/).*")
+@purl_router.route("https?://gitlab\\.(.*)/(?!.*/archive/).*")
 def build_gitlab_purl(url):
     """
     Return a PackageURL object from Gitlab `url`.
@@ -688,10 +688,11 @@ def build_gitlab_purl(url):
     https://gitlab.com/TG1999/firebase/-/master
     https://gitlab.com/tg1999/Firebase/-/tree/master
     https://gitlab.com/tg1999/Firebase/-/commit/bf04e5f289885cf2f20a92b387bcc6df33e30809
+    https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/ # same cases as firebase
     """
     # https://gitlab.com/<ns>/<name>/-/commit/<sha>
     commit_pattern = (
-        r"https?://gitlab.com/"
+        r"https?://gitlab.(.*)/"
         r"(?P<namespace>[^/]+)/(?P<name>[^/]+)/-/commit/"
         r"(?P<version>[0-9a-fA-F]{7,64})/?$"
     )
@@ -737,7 +738,7 @@ def build_gitlab_purl(url):
 
 # https://gitlab.com/hoppr/hoppr/-/archive/v1.11.1-dev.2/hoppr-v1.11.1-dev.2.tar.gz
 gitlab_archive_pattern = (
-    r"^https?://gitlab.com/"
+    r"^https?://gitlab.(.*)/"
     r"(?P<namespace>.+)/(?P<name>.+)/-/archive/(?P<version>.+)/"
     r"(?P=name)-(?P=version).*"
     r"[^/]$"
